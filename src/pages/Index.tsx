@@ -1,11 +1,20 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Toolbar } from "@/components/layout/Toolbar";
+import { ProjectSidebar } from "@/components/layout/ProjectSidebar";
+import { AIGenerationPanel } from "@/components/generation/AIGenerationPanel";
+import { Scene3D } from "@/components/viewport/Scene3D";
+import { ViewportControls } from "@/components/viewport/ViewportControls";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="h-screen w-full flex flex-col overflow-hidden">
+      <Toolbar />
+      <div className="flex-1 flex overflow-hidden">
+        <ProjectSidebar />
+        <div className="flex-1 relative">
+          <Scene3D />
+          <ViewportControls />
+        </div>
+        <AIGenerationPanel />
       </div>
     </div>
   );
